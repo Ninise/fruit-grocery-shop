@@ -11,6 +11,10 @@
 		1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2282931C0BA00A45F8B /* ContentView.swift */; };
 		1148F22B2931C0BC00A45F8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1148F22A2931C0BC00A45F8B /* Assets.xcassets */; };
 		1148F22E2931C0BC00A45F8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1148F22D2931C0BC00A45F8B /* Preview Assets.xcassets */; };
+		1148F2372931C19A00A45F8B /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2362931C19A00A45F8B /* LandingView.swift */; };
+		1148F23C2931C68E00A45F8B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F23B2931C56700A45F8B /* Poppins-Bold.ttf */; };
+		1148F23D2931C68E00A45F8B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */; };
+		1148F23E2931C68E00A45F8B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F2392931C56700A45F8B /* Poppins-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		1148F2282931C0BA00A45F8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1148F22A2931C0BC00A45F8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1148F22D2931C0BC00A45F8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1148F2362931C19A00A45F8B /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		1148F2392931C56700A45F8B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		1148F23B2931C56700A45F8B /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		1148F2412931C85500A45F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,9 @@
 		1148F2252931C0BA00A45F8B /* FruitsGroceryShop */ = {
 			isa = PBXGroup;
 			children = (
+				1148F2412931C85500A45F8B /* Info.plist */,
+				1148F2382931C50E00A45F8B /* fonts */,
+				1148F2342931C17100A45F8B /* views */,
 				1148F2262931C0BA00A45F8B /* FruitsGroceryShopApp.swift */,
 				1148F2282931C0BA00A45F8B /* ContentView.swift */,
 				1148F22A2931C0BC00A45F8B /* Assets.xcassets */,
@@ -65,6 +77,32 @@
 				1148F22D2931C0BC00A45F8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1148F2342931C17100A45F8B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1148F2352931C18700A45F8B /* landing */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1148F2352931C18700A45F8B /* landing */ = {
+			isa = PBXGroup;
+			children = (
+				1148F2362931C19A00A45F8B /* LandingView.swift */,
+			);
+			path = landing;
+			sourceTree = "<group>";
+		};
+		1148F2382931C50E00A45F8B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1148F23B2931C56700A45F8B /* Poppins-Bold.ttf */,
+				1148F2392931C56700A45F8B /* Poppins-Medium.ttf */,
+				1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1148F22E2931C0BC00A45F8B /* Preview Assets.xcassets in Resources */,
+				1148F23C2931C68E00A45F8B /* Poppins-Bold.ttf in Resources */,
 				1148F22B2931C0BC00A45F8B /* Assets.xcassets in Resources */,
+				1148F23D2931C68E00A45F8B /* Poppins-Regular.ttf in Resources */,
+				1148F23E2931C68E00A45F8B /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1148F2372931C19A00A45F8B /* LandingView.swift in Sources */,
 				1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */,
 				1148F2272931C0BA00A45F8B /* FruitsGroceryShopApp.swift in Sources */,
 			);
@@ -270,6 +312,7 @@
 				DEVELOPMENT_TEAM = 8H3L55K75Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FruitsGroceryShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +342,7 @@
 				DEVELOPMENT_TEAM = 8H3L55K75Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FruitsGroceryShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
