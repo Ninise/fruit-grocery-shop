@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112A25582935038D00530387 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A25572935038D00530387 /* LoginScreen.swift */; };
+		112A255B2935063000530387 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A255A2935063000530387 /* View+Extension.swift */; };
+		112A255D29350F0F00530387 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A255C29350F0F00530387 /* UIApplication.swift */; };
 		1148F2272931C0BA00A45F8B /* FruitsGroceryShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2262931C0BA00A45F8B /* FruitsGroceryShopApp.swift */; };
 		1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2282931C0BA00A45F8B /* ContentView.swift */; };
 		1148F22B2931C0BC00A45F8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1148F22A2931C0BC00A45F8B /* Assets.xcassets */; };
@@ -15,9 +18,13 @@
 		1148F23C2931C68E00A45F8B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F23B2931C56700A45F8B /* Poppins-Bold.ttf */; };
 		1148F23D2931C68E00A45F8B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */; };
 		1148F23E2931C68E00A45F8B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F2392931C56700A45F8B /* Poppins-Medium.ttf */; };
+		1148F2442931D35C00A45F8B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2432931D35C00A45F8B /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112A25572935038D00530387 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		112A255A2935063000530387 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		112A255C29350F0F00530387 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		1148F2232931C0BA00A45F8B /* FruitsGroceryShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGroceryShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1148F2262931C0BA00A45F8B /* FruitsGroceryShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGroceryShopApp.swift; sourceTree = "<group>"; };
 		1148F2282931C0BA00A45F8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +35,7 @@
 		1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		1148F23B2931C56700A45F8B /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		1148F2412931C85500A45F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1148F2432931D35C00A45F8B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112A25562935037E00530387 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				112A25572935038D00530387 /* LoginScreen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		112A25592935061300530387 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				112A255A2935063000530387 /* View+Extension.swift */,
+				112A255C29350F0F00530387 /* UIApplication.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		1148F21A2931C0BA00A45F8B = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +85,7 @@
 		1148F2252931C0BA00A45F8B /* FruitsGroceryShop */ = {
 			isa = PBXGroup;
 			children = (
+				112A25592935061300530387 /* extensions */,
 				1148F2412931C85500A45F8B /* Info.plist */,
 				1148F2382931C50E00A45F8B /* fonts */,
 				1148F2342931C17100A45F8B /* views */,
@@ -82,6 +108,8 @@
 		1148F2342931C17100A45F8B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				112A25562935037E00530387 /* Login */,
+				1148F2422931D33E00A45F8B /* welcome */,
 				1148F2352931C18700A45F8B /* landing */,
 			);
 			path = views;
@@ -103,6 +131,14 @@
 				1148F23A2931C56700A45F8B /* Poppins-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		1148F2422931D33E00A45F8B /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				1148F2432931D35C00A45F8B /* WelcomeView.swift */,
+			);
+			path = welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1148F2372931C19A00A45F8B /* LandingView.swift in Sources */,
+				112A255D29350F0F00530387 /* UIApplication.swift in Sources */,
 				1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */,
 				1148F2272931C0BA00A45F8B /* FruitsGroceryShopApp.swift in Sources */,
+				1148F2442931D35C00A45F8B /* WelcomeView.swift in Sources */,
+				112A255B2935063000530387 /* View+Extension.swift in Sources */,
+				112A25582935038D00530387 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

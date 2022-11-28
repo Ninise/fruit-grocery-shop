@@ -8,25 +8,44 @@
 import SwiftUI
 
 struct LandingView: View {
+    
+    @State private var isActive = false
+
+    
     var body: some View {
-        ZStack {
-            Color("MainColor")
-                .edgesIgnoringSafeArea(.all)
-            
-            
-            VStack {
-                Image("cherry_icon")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    
+        NavigationStack {
+            ZStack {
+                Color("MainColor")
+                    .edgesIgnoringSafeArea(.all)
                 
-                Text("Fruit App")
-                    .font(.custom("Poppins-Bold", size: 24))
-                    .foregroundColor(.white)
-            }
+                
+                VStack {
+                    Image("cherry_icon")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        
+                    
+                    Text("Fruit App")
+                        .font(.custom("Poppins-Bold", size: 24))
+                        .foregroundColor(.white)
+                }
+                
+                
+                
+                NavigationLink(destination: WelcomeView(),
+                                               isActive: $isActive,
+                                               label: {  })
             
-        
+            }
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            self.isActive = true
+                        }
+            })
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+       
     }
 }
 
