@@ -1,31 +1,49 @@
 //
-//  LoginScreen.swift
+//  SignUpScreen.swift
 //  FruitsGroceryShop
 //
-//  Created by Nikita on 28.11.2022.
+//  Created by Nikita on 29.11.2022.
 //
 
 import SwiftUI
 
-struct LoginScreen: View {
+struct SignUpScreen: View {
     
+    @State private var name: String = ""
     @State private var email: String = ""
+    @State private var phone: String = ""
     @State private var password: String = ""
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 Image("cherry_icon_filled")
                     .resizable()
                     .frame(width: 80, height: 80)
                     .padding(.bottom, 60)
                 
-                TextField("Email", text: $email)
+                TextField("Name", text: $name)
+                    .font(.custom("Poppins-Regular", size: 18))
+                    .foregroundColor(Color("TextDarkColor"))
+                    .keyboardType(.default)
+                    .textContentType(.name)
+                    .underlineTextField()
+                
+                TextField("Email Address", text: $email)
                     .font(.custom("Poppins-Regular", size: 18))
                     .foregroundColor(Color("TextDarkColor"))
                     .keyboardType(.emailAddress)
                     .textContentType(.emailAddress)
+                    .underlineTextField()
+                
+                TextField("Phone Number", text: $phone)
+                    .font(.custom("Poppins-Regular", size: 18))
+                    .foregroundColor(Color("TextDarkColor"))
+                    .keyboardType(.phonePad)
+                    .textContentType(.telephoneNumber)
                     .underlineTextField()
                 
                 
@@ -35,18 +53,8 @@ struct LoginScreen: View {
                     .textContentType(.password)
                     .underlineTextField()
                 
-                Text("Forgot password")
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 30)
-                    .padding(.top, -10)
-                
-                
-                
                 Button {} label: {
-                  Text("Login")
+                  Text("Sign up")
                         .font(.custom("Poppins-Bold", size: 18))
                         .foregroundColor(.white)
                         .padding(10)
@@ -81,24 +89,40 @@ struct LoginScreen: View {
                         .padding(.horizontal, 5)
                 }
                 
-                Text("Don't have an account? \(Text("Sign up.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
+                Text("Already have an account? \(Text("Sign in.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
                     .foregroundColor(.gray)
                     .font(.custom("Poppins-Regular", size: 15))
                     .foregroundColor(.gray)
                     .padding(.top, 30)
                     .padding(.bottom, 30)
                 
-                
             }
             .padding()
+            .background(Color.white)
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                
+
+               
+                Image(systemName: "arrow.backward")
+                    .tint(Color("TextDarkColor"))
+                    .font(.system(size: 25))
+                    .onTapGesture {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+
+                
+                
+              
+            }
+        }
     }
 }
 
-struct LoginScreen_Previews: PreviewProvider {
+struct SignUpScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen()
+        SignUpScreen()
     }
 }
