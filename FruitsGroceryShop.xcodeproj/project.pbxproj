@@ -20,6 +20,8 @@
 		1148F23E2931C68E00A45F8B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1148F2392931C56700A45F8B /* Poppins-Medium.ttf */; };
 		1148F2442931D35C00A45F8B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2432931D35C00A45F8B /* WelcomeView.swift */; };
 		118378112936472D006EED40 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118378102936472D006EED40 /* SignUpScreen.swift */; };
+		11F998E9293776EE005178E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F998E8293776EE005178E4 /* HomeScreen.swift */; };
+		11F998ED29377D40005178E4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F998EC29377D40005178E4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		1148F2412931C85500A45F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1148F2432931D35C00A45F8B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		118378102936472D006EED40 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		11F998E8293776EE005178E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		11F998EC29377D40005178E4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			children = (
 				112A255A2935063000530387 /* View+Extension.swift */,
 				112A255C29350F0F00530387 /* UIApplication.swift */,
+				11F998EC29377D40005178E4 /* Color+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 		1148F2342931C17100A45F8B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				11F998E7293776DA005178E4 /* home */,
 				112A25562935037E00530387 /* Auth */,
 				1148F2422931D33E00A45F8B /* welcome */,
 				1148F2352931C18700A45F8B /* landing */,
@@ -142,6 +148,14 @@
 				1148F2432931D35C00A45F8B /* WelcomeView.swift */,
 			);
 			path = welcome;
+			sourceTree = "<group>";
+		};
+		11F998E7293776DA005178E4 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				11F998E8293776EE005178E4 /* HomeScreen.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +236,11 @@
 				1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */,
 				118378112936472D006EED40 /* SignUpScreen.swift in Sources */,
 				1148F2272931C0BA00A45F8B /* FruitsGroceryShopApp.swift in Sources */,
+				11F998E9293776EE005178E4 /* HomeScreen.swift in Sources */,
 				1148F2442931D35C00A45F8B /* WelcomeView.swift in Sources */,
 				112A255B2935063000530387 /* View+Extension.swift in Sources */,
 				112A25582935038D00530387 /* LoginScreen.swift in Sources */,
+				11F998ED29377D40005178E4 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
