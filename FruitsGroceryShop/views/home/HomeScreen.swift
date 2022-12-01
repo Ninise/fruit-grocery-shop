@@ -11,53 +11,22 @@ struct HomeScreen: View {
     
     
     var body: some View {
-        ZStack {
-            
-            ScrollView {
-                AppBarView()
-                SearchView()
-                SpecialOfferView()
-                CategoriesView()
-                BigOffersView()
+        NavigationView {
+            ZStack {
                 
-                VStack {
-                    VStack {
-                        HStack {
-                            Text("Recently Added")
-                                .font(.custom("Poppins-Bold", size: 18))
-                                .foregroundColor(Color("TextDarkColor"))
-                            
-                            
-                            Spacer()
-                            
-                            Text("Show All")
-                                .font(.custom("Poppins-Regular", size: 15))
-                                .foregroundColor(Color.mainGreenColor)
-                            
-                        }
-                        
-                    }
-                    .padding(.horizontal, 10)
-                    .padding(.top, 15)
-                    
-                    
-                    ScrollView (.horizontal, showsIndicators: false) {
-                        HStack {
-                            BigOfferItemView(image: "apples_big", text: "Awesome apples from locals")
-                            BigOfferItemView(image: "oranges_big", text: "New oranges Egypt", color: Color.init(hex: "#FE6444"))
-                            BigOfferItemView(image: "papaya_big", text: "Freshly arrived papaya", color: Color.init(hex: "#41B8A2"))
-                            
-                        }
-                        
-                    }
+                ScrollView (.vertical, showsIndicators: false) {
+                    AppBarView()
+                    SearchView()
+                    SpecialOfferView()
+                    CategoriesView()
+                    BigOffersView()
+                    RecentlyAddedView()
                 }
-                .padding(.top, 20)
-                
             }
+            .padding(.all, 10)
+            .background(Color.mainBackgroundColor)
         }
-        .padding(.all, 10)
-        .background(Color.mainBackgroundColor)
-        
+       
         
     }
 }
@@ -177,6 +146,9 @@ struct FruitItemView: View {
 }
 
 struct CategoriesView: View {
+    
+    @State var goToFruitsList: Bool = false
+    
     var body: some View {
         VStack {
             VStack {
@@ -188,9 +160,17 @@ struct CategoriesView: View {
                     
                     Spacer()
                     
+                    
+                    NavigationLink(
+                        "", destination: FruitesListView(),
+                                           isActive: $goToFruitsList)
+                    
                     Text("Show All")
                         .font(.custom("Poppins-Regular", size: 15))
                         .foregroundColor(Color.mainGreenColor)
+                        .onTapGesture {
+                            goToFruitsList = true
+                        }
                     
                 }
                 
@@ -269,6 +249,43 @@ struct BigOffersView: View {
                     BigOfferItemView(image: "oranges_big", text: "Fresh oranges \n50% Off", color: Color.init(hex: "#FE6444"))
                     BigOfferItemView(image: "papaya_big", text: "Fresh papaya \n20% Off", color: Color.init(hex: "#41B8A2"))
                     BigOfferItemView(image: "apples_big", text: "Fresh apples \n20% Off")
+                }
+                
+            }
+        }
+        .padding(.top, 20)
+    }
+}
+
+struct RecentlyAddedView: View {
+    var body: some View {
+        VStack {
+            VStack {
+                HStack {
+                    Text("Recently Added")
+                        .font(.custom("Poppins-Bold", size: 18))
+                        .foregroundColor(Color("TextDarkColor"))
+                    
+                    
+                    Spacer()
+                    
+                    Text("Show All")
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(Color.mainGreenColor)
+                    
+                }
+                
+            }
+            .padding(.horizontal, 10)
+            .padding(.top, 15)
+            
+            
+            ScrollView (.horizontal, showsIndicators: false) {
+                HStack {
+                    BigOfferItemView(image: "apples_big", text: "Awesome apples from locals")
+                    BigOfferItemView(image: "oranges_big", text: "New oranges Egypt", color: Color.init(hex: "#FE6444"))
+                    BigOfferItemView(image: "papaya_big", text: "Freshly arrived papaya", color: Color.init(hex: "#41B8A2"))
+                    
                 }
                 
             }

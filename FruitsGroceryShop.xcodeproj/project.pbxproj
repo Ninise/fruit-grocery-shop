@@ -10,6 +10,7 @@
 		112A25582935038D00530387 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A25572935038D00530387 /* LoginScreen.swift */; };
 		112A255B2935063000530387 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A255A2935063000530387 /* View+Extension.swift */; };
 		112A255D29350F0F00530387 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A255C29350F0F00530387 /* UIApplication.swift */; };
+		1140F8E62938C29300954489 /* FruitesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140F8E52938C29300954489 /* FruitesListView.swift */; };
 		1148F2272931C0BA00A45F8B /* FruitsGroceryShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2262931C0BA00A45F8B /* FruitsGroceryShopApp.swift */; };
 		1148F2292931C0BA00A45F8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148F2282931C0BA00A45F8B /* ContentView.swift */; };
 		1148F22B2931C0BC00A45F8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1148F22A2931C0BC00A45F8B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		112A25572935038D00530387 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		112A255A2935063000530387 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		112A255C29350F0F00530387 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		1140F8E52938C29300954489 /* FruitesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitesListView.swift; sourceTree = "<group>"; };
 		1148F2232931C0BA00A45F8B /* FruitsGroceryShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGroceryShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1148F2262931C0BA00A45F8B /* FruitsGroceryShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGroceryShopApp.swift; sourceTree = "<group>"; };
 		1148F2282931C0BA00A45F8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,13 +57,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112A25562935037E00530387 /* Auth */ = {
+		112A25562935037E00530387 /* auth */ = {
 			isa = PBXGroup;
 			children = (
 				112A25572935038D00530387 /* LoginScreen.swift */,
 				118378102936472D006EED40 /* SignUpScreen.swift */,
 			);
-			path = Auth;
+			path = auth;
 			sourceTree = "<group>";
 		};
 		112A25592935061300530387 /* extensions */ = {
@@ -117,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				11F998E7293776DA005178E4 /* home */,
-				112A25562935037E00530387 /* Auth */,
+				112A25562935037E00530387 /* auth */,
 				1148F2422931D33E00A45F8B /* welcome */,
 				1148F2352931C18700A45F8B /* landing */,
 			);
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				11F998E8293776EE005178E4 /* HomeScreen.swift */,
+				1140F8E52938C29300954489 /* FruitesListView.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				11F998E9293776EE005178E4 /* HomeScreen.swift in Sources */,
 				1148F2442931D35C00A45F8B /* WelcomeView.swift in Sources */,
 				112A255B2935063000530387 /* View+Extension.swift in Sources */,
+				1140F8E62938C29300954489 /* FruitesListView.swift in Sources */,
 				112A25582935038D00530387 /* LoginScreen.swift in Sources */,
 				11F998ED29377D40005178E4 /* Color+Extension.swift in Sources */,
 			);
