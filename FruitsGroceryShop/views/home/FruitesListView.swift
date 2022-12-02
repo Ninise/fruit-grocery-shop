@@ -58,11 +58,12 @@ struct FruitesListView: View {
                     }
                 }
             }
+            .padding(10)
             
         
         }
         .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
-        .padding(.all, 10)
+        .background(Color.mainBackgroundColor)
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
