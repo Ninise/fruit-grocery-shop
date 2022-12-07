@@ -11,6 +11,8 @@ struct FruitesListView: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    @State var goToFruitDetails = false
+
     private var gridLayout = [
            GridItem(.flexible()),
            GridItem(.flexible())
@@ -41,41 +43,50 @@ struct FruitesListView: View {
     ]
     
     var body: some View {
-        ZStack {
-            
-            Color("MainBackgroundColor")
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                SearchView()
+        NavigationView {
+            ZStack {
                 
-                ScrollView (.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: gridLayout, spacing: 20) {
-                        ForEach(1..<images.count) { index in
-                            FruitListItemView(image: images[index], fruit: fruits[index])
-
+                Color("MainBackgroundColor")
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    SearchView()
+                    
+                 
+                    ScrollView (.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: gridLayout, spacing: 20) {
+                            ForEach(1..<images.count) { index in
+                                
+                                NavigationLink(destination: DetailsView(image: images[index], title: fruits[index]), label: {
+                                    FruitListItemView(image: images[index], fruit: fruits[index])
+                                })
+                                .navigationBarHidden(true)
+                                .navigationTitle("")
+                                   
+                                    
+                            }
                         }
                     }
                 }
-            }
-            .padding(10)
+                .padding(10)
+                
             
-        
+            }
+            .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
+            .background(Color.mainBackgroundColor)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                       
+                    Image(systemName: "arrow.backward")
+                        .tint(Color.mainTextColor)
+                        .font(.system(size: 25))
+                        .onTapGesture {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                }
+                
         }
-        .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
-        .background(Color.mainBackgroundColor)
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                   
-                Image(systemName: "arrow.backward")
-                    .tint(Color.mainTextColor)
-                    .font(.system(size: 25))
-                    .onTapGesture {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-            }
-            
         }
     }
 }
@@ -100,7 +111,7 @@ struct FruitListItemView: View {
                 .padding(.top, 10)
             
             Spacer()
-            
+           
             HStack {
                 VStack (alignment: .leading) {
                     Text(fruit)
@@ -126,6 +137,7 @@ struct FruitListItemView: View {
                 .frame(width: 35, height: 35)
                 .background(Color.white)
                 .cornerRadius(10)
+                
                 
             }
             .padding(.horizontal, 10)
