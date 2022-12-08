@@ -20,16 +20,20 @@ struct WelcomeView: View {
                 
                 VStack {
                     Image("welcome_screen_img")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .background(Circle().fill(Color.mainGreenColor))
                     
                     VStack(alignment: .center, spacing: 10) {
                         Text("Welcome to our Fruits App")
                             .font(.custom("Poppins-Medium", size: 25))
-                            .foregroundColor(Color("TextDarkColor"))
+                            .foregroundColor(Color.mainTextColor)
                             
                         
                         Text("Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.")
                             .font(.custom("Poppins-Regular", size: 18))
-                            .foregroundColor(Color("TextDarkColor"))
+                            .foregroundColor(Color.mainTextColor)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .multilineTextAlignment(.center)
                             .padding()
@@ -51,7 +55,7 @@ struct WelcomeView: View {
                 
                     .frame(width: 300)
                     .padding(5)
-                    .background(Color("MainColor"))
+                    .background(Color.mainGreenColor)
                     .cornerRadius(40)
                     
                     

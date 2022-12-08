@@ -17,87 +17,99 @@ struct LoginScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Image("cherry_icon_filled")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .padding(.bottom, 60)
+            ZStack {
                 
-                TextField("Email", text: $email)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
-                    .underlineTextField()
+                Color(hex: "#F5F5F5")
+                    .edgesIgnoringSafeArea(.all)
                 
-                
-                SecureField("Password", text: $password)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .textContentType(.password)
-                    .underlineTextField()
-                
-                Text("Forgot password")
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 30)
-                    .padding(.top, -10)
-                
-                
-                
-                Button {} label: {
-                  Text("Login")
-                        .font(.custom("Poppins-Bold", size: 18))
-                        .foregroundColor(.white)
-                        .padding(10)
-                        
-                }
-                .frame(maxWidth: .infinity, minHeight: 50)
-                .padding(5)
-                .background(Color("MainColor"))
-                .cornerRadius(40)
-                
-                
-                Text("Or Continue With")
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
-                
-                HStack (alignment: .center) {
-                    Image("google")
+                VStack {
+                    Image("cherry_icon_filled")
                         .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 5)
+                        .frame(width: 80, height: 80)
+                        .padding(.bottom, 60)
                     
-                    Image("twitter")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 10)
+                    TextField("", text: $email)
+                        .placeholder(when: email.isEmpty) {
+                                Text("Email").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color.mainTextColor)
+                        .keyboardType(.emailAddress)
+                        .textContentType(.emailAddress)
+                        .underlineTextField()
                     
-                    Image("facebook")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 5)
-                }
-                
-                NavigationLink(destination: SignUpScreen(), isActive: $goToSignUp) { EmptyView() }
-                
-                Text("Don't have an account? \(Text("Sign up.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
-                    .foregroundColor(.gray)
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
-                    .onTapGesture {
-                        self.goToSignUp = true
+                    
+                    SecureField("", text: $password)
+                        .placeholder(when: email.isEmpty) {
+                                Text("Password").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color.mainTextColor)
+                        .textContentType(.password)
+                        .underlineTextField()
+                    
+                    Text("Forgot password")
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, 10)
+                        .padding(.bottom, 30)
+                        .padding(.top, -10)
+                    
+                    
+                    
+                    Button {} label: {
+                      Text("Login")
+                            .font(.custom("Poppins-Bold", size: 18))
+                            .foregroundColor(.white)
+                            .padding(10)
+                            
                     }
-                
-                
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .padding(5)
+                    .background(Color.mainGreenColor)
+                    .cornerRadius(30)
+                    
+                    
+                    Text("Or Continue With")
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(.gray)
+                        .padding(.top, 30)
+                        .padding(.bottom, 30)
+                    
+                    HStack (alignment: .center) {
+                        Image("google")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 5)
+                        
+                        Image("twitter")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 10)
+                        
+                        Image("facebook")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 5)
+                    }
+                    
+                    NavigationLink(destination: SignUpScreen(), isActive: $goToSignUp) { EmptyView() }
+                    
+                    Text("Don't have an account? \(Text("Sign up.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
+                        .foregroundColor(.gray)
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(.gray)
+                        .padding(.top, 30)
+                        .padding(.bottom, 30)
+                        .onTapGesture {
+                            self.goToSignUp = true
+                        }
+                    
+                    
+                }
+                .padding()
             }
-            .padding()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

@@ -14,11 +14,21 @@ extension View {
         self
             .padding(.vertical, 10)
             .overlay(Rectangle().frame(height: 1).padding(.top, 35))
-            .foregroundColor(Color("LightGrayColor"))
+            .foregroundColor(Color.mainTextColor)
             .padding(10)
     }
-}
+    
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
 
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
+    }
+}
 
 
 struct RoundedCorner: Shape {

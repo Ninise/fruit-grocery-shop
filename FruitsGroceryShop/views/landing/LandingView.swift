@@ -15,7 +15,7 @@ struct LandingView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color("MainColor")
+                Color(hex: "#04B761")
                     .edgesIgnoringSafeArea(.all)
                 
                 
@@ -43,6 +43,7 @@ struct LandingView: View {
                         }
             })
         }
+        .background(Color.mainGreenColor)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
        

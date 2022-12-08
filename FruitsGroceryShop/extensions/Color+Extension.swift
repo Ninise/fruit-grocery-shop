@@ -9,9 +9,16 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    static let mainBackgroundColor = Color(hex: "#F5F5F5")
+    static let mainTextColor = Color(hex: "#2B2D41")
+    static let mainGreenColor = Color(hex: "#04B761")
+}
+
+extension CGColor {
     static let mainBackgroundColor = Color("MainBackgroundColor")
     static let mainTextColor = Color("TextDarkColor")
-    static let mainGreenColor = Color("MainColor")
+    static let mainGreenColor = CGColor(red: 4, green: 183, blue: 98, alpha: 1)
+    
 }
 
 extension Color {
