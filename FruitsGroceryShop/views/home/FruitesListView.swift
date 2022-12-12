@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct FruitesListView: View {
-
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    
     @State var goToFruitDetails = false
-
+    
     private var gridLayout = [
-           GridItem(.flexible()),
-           GridItem(.flexible())
-       ]
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     private var images = [
         "oranges_big",
@@ -52,7 +52,7 @@ struct FruitesListView: View {
                 VStack {
                     SearchView()
                     
-                 
+                    
                     ScrollView (.vertical, showsIndicators: false) {
                         LazyVGrid(columns: gridLayout, spacing: 20) {
                             ForEach(1..<images.count) { index in
@@ -62,31 +62,31 @@ struct FruitesListView: View {
                                 })
                                 .navigationBarHidden(true)
                                 .navigationTitle("")
-                                   
-                                    
+                                
+                                
                             }
                         }
                     }
                 }
                 .padding(10)
                 
-            
-            }
-            .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
-            .background(Color.mainBackgroundColor)
-            .navigationBarBackButtonHidden()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                       
-                    Image(systemName: "arrow.backward")
-                        .tint(Color.mainTextColor)
-                        .font(.system(size: 25))
-                        .onTapGesture {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }
-                }
                 
+            }
         }
+        .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
+        .navigationBarBackButtonHidden()
+        .background(Color.mainBackgroundColor)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                
+                Image(systemName: "arrow.backward")
+                    .tint(Color.mainTextColor)
+                    .font(.system(size: 25))
+                    .onTapGesture {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+            }
+            
         }
     }
 }
@@ -111,8 +111,8 @@ struct FruitListItemView: View {
                 .padding(.top, 10)
             
             Spacer()
-           
-            HStack {
+            
+            HStack (alignment: .bottom) {
                 VStack (alignment: .leading) {
                     Text(fruit)
                         .font(.custom("Poppins-Medium", size: 17))

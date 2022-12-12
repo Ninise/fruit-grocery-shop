@@ -21,11 +21,19 @@ struct HomeScreen: View {
                     CategoriesView()
                     BigOffersView()
                     RecentlyAddedView()
+                    Spacer(minLength: 60)
                 }
+                
+                
+                
+                BottomNavBar()
             }
             .padding(.all, 10)
             .background(Color.mainBackgroundColor)
         }
+        .navigationBarBackButtonHidden()
+        .navigationBarHidden(true)
+        
        
         
     }
@@ -141,6 +149,7 @@ struct FruitItemView: View {
             Text(text)
                 .font(.custom("Poppins-Regular", size: 13))
                 .foregroundColor(Color.mainTextColor)
+                .lineLimit(1)
         }
     }
 }
@@ -186,6 +195,11 @@ struct CategoriesView: View {
                 FruitItemView(image: "orange", text: "Orange")
             }
         }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.goToFruitsList = false
+            }
+        }
     }
 }
 
@@ -222,6 +236,9 @@ struct BigOfferItemView: View {
 }
 
 struct BigOffersView: View {
+    
+    @State var goToFruitDetails: Bool = false
+    
     var body: some View {
         VStack {
             VStack {
@@ -293,3 +310,50 @@ struct RecentlyAddedView: View {
         .padding(.top, 20)
     }
 }
+
+struct BottomNavBarItem: View {
+    
+    let image: Image
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            image
+                .frame(maxWidth: .infinity)
+                .tint(.mainGreenColor)
+        })
+    }
+}
+
+struct BottomNavBar: View {
+    @State var goToCart: Bool = false
+    
+    var body: some View {
+        HStack {
+            
+            NavigationLink(
+                "", destination: CartView(),
+                isActive: $goToCart)
+           
+            
+            BottomNavBarItem(image: Image(systemName: "house")) {}
+            BottomNavBarItem(image: Image(systemName: "cart")) {
+                goToCart = true
+            }
+            BottomNavBarItem(image: Image(systemName: "bell.badge")) {}
+            BottomNavBarItem(image: Image(systemName: "person")) {}
+        }
+        .padding()
+        .background(Color.white)
+        .clipShape(Capsule())
+        .padding(.horizontal)
+        .shadow(color: Color.black.opacity(0.15), radius: 8, x: 2, y: 6)
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.goToCart = false
+            }
+        }
+    }
+}
+

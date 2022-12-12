@@ -19,95 +19,112 @@ struct SignUpScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Image("cherry_icon_filled")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .padding(.bottom, 60)
+            ZStack {
                 
-                TextField("Name", text: $name)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .keyboardType(.default)
-                    .textContentType(.name)
-                    .underlineTextField()
-                
-                TextField("Email Address", text: $email)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
-                    .underlineTextField()
-                
-                TextField("Phone Number", text: $phone)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .keyboardType(.phonePad)
-                    .textContentType(.telephoneNumber)
-                    .underlineTextField()
+                Color(hex: "#F5F5F5")
+                    .edgesIgnoringSafeArea(.all)
                 
                 
-                SecureField("Password", text: $password)
-                    .font(.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color("TextDarkColor"))
-                    .textContentType(.password)
-                    .underlineTextField()
-                
-                Button {} label: {
-                  Text("Sign up")
-                        .font(.custom("Poppins-Bold", size: 18))
-                        .foregroundColor(.white)
-                        .padding(10)
+                VStack {
+                    Image("cherry_icon_filled")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                        .padding(.bottom, 60)
+                    
+                    TextField("", text: $name)
+                        .placeholder(when: name.isEmpty) {
+                                Text("Name").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color("TextDarkColor"))
+                        .keyboardType(.default)
+                        .textContentType(.name)
+                        .underlineTextField()
+                    
+                    TextField("", text: $email)
+                        .placeholder(when: email.isEmpty) {
+                                Text("Email Address").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color("TextDarkColor"))
+                        .keyboardType(.emailAddress)
+                        .textContentType(.emailAddress)
+                        .underlineTextField()
+                    
+                    TextField("", text: $phone)
+                        .placeholder(when: phone.isEmpty) {
+                                Text("Phone Number").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color("TextDarkColor"))
+                        .keyboardType(.phonePad)
+                        .textContentType(.telephoneNumber)
+                        .underlineTextField()
+                    
+                    
+                    SecureField("", text: $password)
+                        .placeholder(when: password.isEmpty) {
+                                Text("Password").foregroundColor(.gray)
+                        }
+                        .font(.custom("Poppins-Regular", size: 18))
+                        .foregroundColor(Color("TextDarkColor"))
+                        .textContentType(.password)
+                        .underlineTextField()
+                    
+                    Button {} label: {
+                      Text("Sign up")
+                            .font(.custom("Poppins-Bold", size: 18))
+                            .foregroundColor(.white)
+                            .padding(10)
+                            
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .padding(5)
+                    .background(Color.mainGreenColor)
+                    .cornerRadius(30)
+                    
+                    
+                    Text("Or Continue With")
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(.gray)
+                        .padding(.top, 30)
+                        .padding(.bottom, 30)
+                    
+                    HStack (alignment: .center) {
+                        Image("google")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 5)
                         
-                }
-                .frame(maxWidth: .infinity, minHeight: 50)
-                .padding(5)
-                .background(Color("MainColor"))
-                .cornerRadius(40)
-                
-                
-                Text("Or Continue With")
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
-                
-                HStack (alignment: .center) {
-                    Image("google")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 5)
+                        Image("twitter")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 10)
+                        
+                        Image("facebook")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .padding(.horizontal, 5)
+                    }
                     
-                    Image("twitter")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 10)
+                    Text("Already have an account? \(Text("Sign in.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
+                        .foregroundColor(.gray)
+                        .font(.custom("Poppins-Regular", size: 15))
+                        .foregroundColor(.gray)
+                        .padding(.top, 30)
+                        .padding(.bottom, 30)
                     
-                    Image("facebook")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.horizontal, 5)
                 }
-                
-                Text("Already have an account? \(Text("Sign in.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
-                    .foregroundColor(.gray)
-                    .font(.custom("Poppins-Regular", size: 15))
-                    .foregroundColor(.gray)
-                    .padding(.top, 30)
-                    .padding(.bottom, 30)
-                
+                .padding()
+            .background(Color.mainBackgroundColor)
             }
-            .padding()
-            .background(Color.white)
         }
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                
-
-               
+    
                 Image(systemName: "arrow.backward")
-                    .tint(Color("TextDarkColor"))
+                    .tint(.mainTextColor)
                     .font(.system(size: 25))
                     .onTapGesture {
                         self.presentationMode.wrappedValue.dismiss()

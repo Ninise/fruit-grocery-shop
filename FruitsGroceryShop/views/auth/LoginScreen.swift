@@ -13,6 +13,7 @@ struct LoginScreen: View {
     @State private var password: String = ""
 
     @State private var goToSignUp: Bool = false
+    @State private var goToHome: Bool = false
 
     
     var body: some View {
@@ -58,7 +59,9 @@ struct LoginScreen: View {
                     
                     
                     
-                    Button {} label: {
+                    Button {
+                        goToHome = true
+                    } label: {
                       Text("Login")
                             .font(.custom("Poppins-Bold", size: 18))
                             .foregroundColor(.white)
@@ -95,6 +98,8 @@ struct LoginScreen: View {
                     }
                     
                     NavigationLink(destination: SignUpScreen(), isActive: $goToSignUp) { EmptyView() }
+                    
+                    NavigationLink(destination: HomeScreen(), isActive: $goToHome) { EmptyView() }
                     
                     Text("Don't have an account? \(Text("Sign up.").foregroundColor(.green).font(.custom("Poppins-Bold", size: 15)))")
                         .foregroundColor(.gray)

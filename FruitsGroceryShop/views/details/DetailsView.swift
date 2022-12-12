@@ -27,8 +27,6 @@ struct DetailsView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: 250)
-                        
-                    
                 }
                 .frame(height: 300)
                 
@@ -129,14 +127,14 @@ struct DetailsView: View {
             
         
         }
-        .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)))
+        .navigationBarTitle(Text("Fruits").font(.custom("Poppins-Bold", size: 18)).foregroundColor(.white))
         .background(Color.mainGreenColor)
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                    
                 Image(systemName: "arrow.backward")
-                    .tint(Color.white)
+                    .foregroundColor(.white)
                     .font(.system(size: 25))
                     .onTapGesture {
                         self.presentationMode.wrappedValue.dismiss()
