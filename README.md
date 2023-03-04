@@ -18,6 +18,7 @@ The goal of the project is to learn how to use SwiftUI
   <img src="login.png" width="225">
   <img src="main_1.png" width="225">
   <img src="search_1.png" width="225">
+  </br>
   <img src="fruit_details_1.png" width="225">
   <img src="checkout_1.png" width="225">
 </p>
